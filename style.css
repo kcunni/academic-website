@@ -87,3 +87,47 @@ footer {
     font-size: 0.9rem;
     color: #666666;
 }
+
+/* About Section Layout */
+.about-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.bio-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px; 
+}
+
+.bio-image {
+    flex: 1; 
+    max-width: 300px; 
+}
+
+.bio-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.bio-text {
+    flex: 2; 
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 850px) {
+    .bio-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .bio-image {
+        max-width: 80%; 
+    }
+}
