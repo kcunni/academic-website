@@ -1,133 +1,208 @@
-/* Base Styles */
-:root {
-    --text-main: #333333;
-    --nav-blue: #13294B;
-    --carolina-blue: #7BAFD4;
-    --bg-light: #f9f9f9;
+/* ==========================================================================
+   1. GLOBAL & RESET STYLES
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    /* Clean, legible academic font stack */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
-    color: var(--text-main);
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
+    color: #333333;
     background-color: #ffffff;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Header & Navigation */
-header {
-    text-align: center;
-    padding: 3rem 0 1.5rem;
-    border-bottom: 3px solid var(--carolina-blue);
-}
-
-header h1 {
-    margin-bottom: 0.5rem;
-    color: var(--nav-blue);
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    padding: 1.5rem 0;
-    background-color: var(--bg-light);
-    border-radius: 0 0 8px 8px;
-}
-
-nav a {
-    text-decoration: none;
-    color: var(--nav-blue);
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    color: #111111;
     font-weight: 600;
-    transition: color 0.2s ease;
-}
-
-nav a:hover {
-    color: var(--carolina-blue);
-}
-
-/* Main Content */
-section {
-    padding: 2.5rem 0;
-    border-bottom: 1px solid #eeeeee;
-}
-
-section h2 {
-    color: var(--nav-blue);
+    line-height: 1.2;
     margin-bottom: 1rem;
-}
-
-section h3 {
     margin-top: 1.5rem;
-    font-size: 1.1rem;
 }
 
-ul {
-    padding-left: 20px;
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+p {
+    margin-bottom: 1.25rem;
 }
 
-li {
-    margin-bottom: 0.5rem;
-}
-
+/* Links - using a classic academic blue */
 a {
-    color: var(--carolina-blue);
+    color: #005A9C; 
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
 }
 
 a:hover {
-    text-decoration: none;
+    color: #003366;
+    text-decoration: underline;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 2rem 0;
-    font-size: 0.9rem;
-    color: #666666;
+/* Media defaults */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
-/* About Section Layout */
+/* Lists */
+ul, ol {
+    margin-bottom: 1.25rem;
+    margin-left: 2rem;
+}
+
+/* ==========================================================================
+   2. MAIN LAYOUT CONTAINERS
+   ========================================================================== */
+/* Wraps the entire site content to keep it centered and readable */
+.site-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header / Site Title Area */
+.site-header {
+    padding: 40px 0 20px 0;
+    border-bottom: 1px solid #eeeeee;
+    margin-bottom: 40px;
+}
+
+.site-title {
+    font-size: 2.5rem;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+/* ==========================================================================
+   3. ABOUT SECTION (BANNER & BIO)
+   ========================================================================== */
 .about-section {
     max-width: 1100px;
-    margin: 0 auto;
-    padding: 40px 20px;
+    margin: 0 auto 60px auto;
 }
 
+/* Banner Image Styling (Greenlaw Hall) */
+.banner-container {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.banner-image {
+    width: 100%;
+    height: 350px; /* Controls how tall the banner is */
+    object-fit: cover; /* Prevents the image from stretching */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Subtle shadow for depth */
+}
+
+/* Bio Text and Image Layout (Side-by-Side) */
 .bio-container {
     display: flex;
-    align-items: center;
+    align-items: flex-start; 
     justify-content: space-between;
-    gap: 40px; 
+    gap: 50px; /* Space between text and image */
+}
+
+.bio-text {
+    flex: 2; /* Takes up 2/3 of the space */
+    font-size: 1.15rem;
+    line-height: 1.8;
 }
 
 .bio-image {
-    flex: 1; 
-    max-width: 175px; /* Adjust this number to make the images larger or smaller */
+    flex: 1; /* Takes up 1/3 of the space */
+    max-width: 320px; 
 }
 
 .bio-image img {
     width: 100%;
-    height: auto;
     border-radius: 8px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
 }
 
-.bio-text {
-    flex: 2; 
-    font-size: 1.1rem;
-    line-height: 1.7;
+/* ==========================================================================
+   4. FOOTER / SITE MAP / CONTACT
+   ========================================================================== */
+.site-footer {
+    border-top: 1px solid #eeeeee;
+    padding: 60px 0;
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+    font-size: 0.95rem;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 850px) {
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-column h2 {
+    font-size: 1.25rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #333;
+    display: inline-block;
+    padding-bottom: 4px;
+}
+
+.footer-column ul {
+    list-style: none;
+    margin-left: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.5rem;
+}
+
+.contact-info p {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+/* ==========================================================================
+   5. MOBILE RESPONSIVENESS
+   ========================================================================== */
+@media (max-width: 900px) {
+    /* Stack the bio layout vertically on tablets and phones */
     .bio-container {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: column; 
     }
     
-    .bio-image {
-        max-width: 200px; /* Controls image size on mobile screens */
+    .bio-text {
+        order: 1; /* Ensures text appears above the image on mobile */
     }
+
+    .bio-image {
+        order: 2;
+        max-width: 80%; /* Scales the image up slightly on mobile */
+        margin: 20px auto 0 auto; /* Centers the image */
+    }
+
+    /* Shrink banner height for smaller screens */
+    .banner-image {
+        height: 200px; 
+    }
+
+    /* Stack footer columns */
+    .site-footer {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    .banner-image { height: 150px; }
 }
