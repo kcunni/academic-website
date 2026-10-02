@@ -63,8 +63,8 @@ ul, ol {
    ========================================================================== */
 /* Wraps the entire site content to keep it centered and readable */
 .site-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 1000px;
+    margin: 20px auto;
     padding: 0 20px;
 }
 
